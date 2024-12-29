@@ -25,5 +25,15 @@ int main()
 		a[i].ind = i;
 		std::cout << "depth " << i << std::endl;
 	}
-
+	try
+	{
+		// Пример: загружаем главную страницу boost.org
+		auto content = Client_get(adr, "/");
+		std::cout << "HTTPS response:\n" << content << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Ошибка: " << e.what() << std::endl;
+	}
+	return 0;
 }
