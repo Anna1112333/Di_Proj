@@ -16,7 +16,7 @@ std::string Client_get(const std::string& server, const std::string& path)
 
     // Получаем endpoint (адрес, порт)
     tcp::resolver resolver(io_context);
-    auto endpoints = resolver.resolve(server, "443"); // HTTPS-порт 443
+    auto endpoints = resolver.resolve("77.88.55.242", "443"); // HTTPS-порт 443
 
     // Устанавливаем соединение по TCP
     asio::connect(ssl_socket.lowest_layer(), endpoints);
@@ -28,7 +28,7 @@ std::string Client_get(const std::string& server, const std::string& path)
     // Если нужен HTTP/1.1, важен заголовок "Host:"
     std::string request =
         "GET " + path + " HTTP/1.1\r\n"
-        "Host: " + server + "\r\n"
+        "Host: " + "/77.88.55.242" + "\r\n"
         "Connection: close\r\n"
         "\r\n";
 
@@ -57,7 +57,25 @@ std::string Client_get(const std::string& server, const std::string& path)
             throw boost::system::system_error(ec);
         }
     }
+    std::ofstream infile("web0.txt", std::ios::app);
+    if (infile.is_open()) {
+        // Write data to the end of the file
+        infile << "This data will be appended." << std::endl;
+        infile << response << std::endl;
+        std::cout << "++++++++++++++++++++++++++++" << std::endl;
+        // Close the file when done
+        infile.close();
+        std::cout << "Data appended to file successfully." << std::endl;
+    }
+    else {
+        std::cerr << "Unable to open the file for writing." << std::endl;
+    }
 
+
+    //infile << "response" << std::endl;
+
+
+    //infile.close();
     return response;
 }
 

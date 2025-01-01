@@ -160,6 +160,9 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="web0.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
