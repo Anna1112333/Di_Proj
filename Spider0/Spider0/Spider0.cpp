@@ -7,7 +7,8 @@
 #include "Client.h"
 
 int main()
-{  
+{
+
 	std::ifstream read(".ini");
 	int n; //количество ступеней скачивания страниц сайта вглубь
 	read >> n;

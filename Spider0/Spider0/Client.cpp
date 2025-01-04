@@ -16,7 +16,7 @@ std::string Client_get(const std::string& server, const std::string& path)
 
     // Получаем endpoint (адрес, порт)
     tcp::resolver resolver(io_context);
-    auto endpoints = resolver.resolve("77.88.55.242", "443"); // HTTPS-порт 443
+    auto endpoints = resolver.resolve(server, "443"); // HTTPS-порт 443
 
     // Устанавливаем соединение по TCP
     asio::connect(ssl_socket.lowest_layer(), endpoints);
@@ -28,7 +28,8 @@ std::string Client_get(const std::string& server, const std::string& path)
     // Если нужен HTTP/1.1, важен заголовок "Host:"
     std::string request =
         "GET " + path + " HTTP/1.1\r\n"
-        "Host: " + "/77.88.55.242" + "\r\n"
+        "Host: " + server + "\r\n"
+        "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
         "Connection: close\r\n"
         "\r\n";
 
@@ -70,12 +71,10 @@ std::string Client_get(const std::string& server, const std::string& path)
     else {
         std::cerr << "Unable to open the file for writing." << std::endl;
     }
+   //  request = "Connection: close\r\n" "\r\n";///+++
+    // Отправляем запрос
+   // asio::write(ssl_socket, asio::buffer(request));///+++
 
-
-    //infile << "response" << std::endl;
-
-
-    //infile.close();
     return response;
 }
 
@@ -85,7 +84,7 @@ std::string Client_get(const std::string& server, const std::string& path)
 
 
 // Performs an HTTP GET and prints the response
-/*int client(int argc, char** argv)
+/*int client00(int argc, char** argv)
 {
     try
     {

@@ -27,4 +27,4 @@ struct adr_web {
     std::vector<std::string> adress;
     
 };
-std::string Client_get(const std::string& server, const std::string& path = "/");
+std::string Client_get(const std::string& server, const std::string& path);
