@@ -5,7 +5,7 @@
 #include <iostream>
 #include <asn1err.h>
 #include "Client.h"
-
+using namespace pqxx;
 int main()
 {	
 	std::ifstream read(".ini");

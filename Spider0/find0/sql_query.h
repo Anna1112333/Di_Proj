@@ -2,6 +2,8 @@
 #include <pqxx/pqxx>
 #include <iostream>
 
+ void tables();
+
 class SqlSelectQueryBuilder {
 	public:
 		std::string query0 = "";
