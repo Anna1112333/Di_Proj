@@ -4,23 +4,27 @@
 // Функция для загрузки страницы по HTTPS
 std::string Client_get(const std::string& server, const std::string& path)
 {
+    namespace asio = boost::asio;
     // Контекст SSL. В данном примере включено лишь базовое доверие к корневым сертификатам.
     // Можно донастроить контекст (например, указать путь к сертификатам, отключить/включить разные версии TLS и т.д.)
     asio::ssl::context ctx(asio::ssl::context::sslv23_client);
+   
 
     // Обёртка над io_service (или io_context в более новых версиях Boost)
     asio::io_context io_context;
-
+    
+    //socket.connect(server);
     // Создаём SSL-сокет (tcp::socket + ssl-слой)
     asio::ssl::stream<tcp::socket> ssl_socket(io_context, ctx);
+  
 
     // Получаем endpoint (адрес, порт)
     tcp::resolver resolver(io_context);
     auto endpoints = resolver.resolve(server, "443"); // HTTPS-порт 443
 
     // Устанавливаем соединение по TCP
-    asio::connect(ssl_socket.lowest_layer(), endpoints);
-
+   // asio::async_connect(ssl_socket.lowest_layer(), endpoints); //+++async_
+    asio::connect(ssl_socket.lowest_layer(), endpoints); //+++async_
     // Инициируем SSL Handshake (TLS/SSL рукопожатие)
     ssl_socket.handshake(asio::ssl::stream_base::client);
 

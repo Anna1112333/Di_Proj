@@ -79,8 +79,8 @@
     <LibraryPath>C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs\locale\build\msvc-14.3\debug\x86_64\link-static\threading-multi\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExternalIncludePath>C:\Git\Di_spider\include;C:\Git\Di_spider\include\openssl;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0;C:\VisualSC\boost\boost_1_87_0;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs\locale\build\msvc-14.3\debug\x86_64\link-static\threading-multi\;$(LibraryPath)</LibraryPath>
+    <ExternalIncludePath>C:\Git\Di_spider\include;C:\Git\Di_spider\include\openssl;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include;C:\VisualSC\libpqxx\libpqxx-7.10.0\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs\locale\build\msvc-14.3\debug\x86_64\link-static\threading-multi\;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ExternalIncludePath>C:\Git\Di_spider\include;C:\Git\Di_spider\include\openssl;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0;C:\VisualSC\boost\boost_1_87_0;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2;$(ExternalIncludePath)</ExternalIncludePath>
@@ -124,12 +124,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Git\Di_spider\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>"C:\Git\Di_spider\lib\libssl.lib";"C:\Git\Di_spider\lib\libcrypto.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Git\Di_spider\lib;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>"C:\Git\Di_spider\lib\libssl.lib";"C:\Git\Di_spider\lib\libcrypto.lib";"C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib\pqxx.lib";"C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include\pqxx\pqxx";%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

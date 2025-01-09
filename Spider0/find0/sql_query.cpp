@@ -1,7 +1,6 @@
 #include "sql_query.h"
 
 
-
 void SqlSelectQueryBuilder::add()
 {
 	a++;

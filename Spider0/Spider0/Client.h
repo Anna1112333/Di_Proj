@@ -13,6 +13,9 @@
 #include <string>
 #include <vector>
 
+#include <pqxx/pqxx>
+#include <windows.h>
+
 namespace asio = boost::asio;
 using tcp = asio::ip::tcp;
 
@@ -27,4 +30,5 @@ struct adr_web {
     std::vector<std::string> adress;
     
 };
+
 std::string Client_get(const std::string& server, const std::string& path);
