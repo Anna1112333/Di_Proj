@@ -33,7 +33,7 @@ std::string Client_get(const std::string& server, const std::string& path)
     std::string request =
         "GET " + path + " HTTP/1.1\r\n"
         "Host: " + server + "\r\n"
-        "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+        "Accept: */*"
         "Connection: close\r\n"
         "\r\n";
 
@@ -65,7 +65,7 @@ std::string Client_get(const std::string& server, const std::string& path)
     std::ofstream infile("web0.txt", std::ios::app);
     if (infile.is_open()) {
         // Write data to the end of the file
-        infile << "This data will be appended." << std::endl;
+        infile << "This data will be appended.-------------------" << std::endl;
         infile << response << std::endl;
         std::cout << "++++++++++++++++++++++++++++" << std::endl;
         // Close the file when done

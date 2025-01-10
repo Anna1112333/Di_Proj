@@ -1,19 +1,19 @@
-This data will be appended.
+This data will be appended.-------------------
 HTTP/1.1 406 Not acceptable
 
-NEL: {"report_to": "network-errors", "max_age": 100, "success_fraction": 0.001, "failure_fraction": 0.1}
-
-Content-Length: 0
-
-X-Yandex-Req-Id: 1736267812797706-9668759716843913419-balancer-l7leveler-kubr-yp-sas-237-BAL
-
-Report-To: { "group": "network-errors", "max_age": 100, "endpoints": [{"url": "https://dr.yandex.net/nel", "priority": 1}, {"url": "https://dr2.yandex.net/nel", "priority": 2}]}
-
-Connection: Close
+X-Yandex-Req-Id: 1736537137849645-18121950455161873579-balancer-l7leveler-kubr-yp-sas-192-BAL
 
 X-Content-Type-Options: nosniff
 
 Accept-CH: Sec-CH-UA-Platform-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA, Sec-CH-UA-Full-Version-List, Sec-CH-UA-WoW64, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Platform, Sec-CH-UA-Full-Version, Viewport-Width, DPR, Device-Memory, RTT, Downlink, ECT, Width
+
+Report-To: { "group": "network-errors", "max_age": 100, "endpoints": [{"url": "https://dr.yandex.net/nel", "priority": 1}, {"url": "https://dr2.yandex.net/nel", "priority": 2}]}
+
+NEL: {"report_to": "network-errors", "max_age": 100, "success_fraction": 0.001, "failure_fraction": 0.1}
+
+Connection: Close
+
+Content-Length: 0
 
 
 
