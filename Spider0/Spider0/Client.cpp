@@ -30,9 +30,9 @@ std::string Client_get(const std::string& server, const std::string& path)
 
     // Формируем простой HTTP GET-запрос:
     // Если нужен HTTP/1.1, важен заголовок "Host:"
-    std::string request =
+    std::string request = 
         "GET " + path + " HTTP/1.1\r\n"
-        "Host: " + server + "\r\n"
+       "Host: " + server + "\r\n"
         "Accept: */*"
         "Connection: close\r\n"
         "\r\n";

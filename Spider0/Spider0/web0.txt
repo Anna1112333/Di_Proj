@@ -1,20 +1,66 @@
+
+
+
 This data will be appended.-------------------
-HTTP/1.1 406 Not acceptable
+HTTP/1.1 200 OK
 
-X-Yandex-Req-Id: 1736537137849645-18121950455161873579-balancer-l7leveler-kubr-yp-sas-192-BAL
+Server: QRATOR
 
-X-Content-Type-Options: nosniff
+Date: Mon, 13 Jan 2025 17:12:52 GMT
 
-Accept-CH: Sec-CH-UA-Platform-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA, Sec-CH-UA-Full-Version-List, Sec-CH-UA-WoW64, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Platform, Sec-CH-UA-Full-Version, Viewport-Width, DPR, Device-Memory, RTT, Downlink, ECT, Width
+Content-Type: text/html; charset=utf-8
 
-Report-To: { "group": "network-errors", "max_age": 100, "endpoints": [{"url": "https://dr.yandex.net/nel", "priority": 1}, {"url": "https://dr2.yandex.net/nel", "priority": 2}]}
+Content-Length: 12192
 
-NEL: {"report_to": "network-errors", "max_age": 100, "success_fraction": 0.001, "failure_fraction": 0.1}
+Connection: keep-alive
 
-Connection: Close
+Keep-Alive: timeout=15
 
-Content-Length: 0
+Accept-Ranges: bytes
+
+Etag: "soouot9eo"
+
+Last-Modified: Wed, 18 Dec 2024 12:00:29 GMT
+
+Cache-Control: max-age=86400
 
 
 
+<!DOCTYPE html>
+<html lang="ru" prefix="og: https://ogp.me/ns#" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>Обучающая онлайн-платформа Skillbox</title>
+    <meta name="description" content="Выберите свой курс на обучающей платформе онлайн-университета Skillbox и приступайте к обучению">
+    <base href="https://cdn.skillbox.pro/lms-front/skillbox/414831/">
+
+    <meta property="og:title" content="Обучающая онлайн-платформа Skillbox">
+    <meta property="og:description" content="Выберите свой курс на обучающей платформе онлайн-университета Skillbox и приступайте к обучению">
+    <meta property="og:url" content="https://go.skillbox.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Обучающая онлайн-платформа Skillbox">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="kk_KZ">
+    <meta property="og:locale:alternate" content="uz_UZ">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="assets/img/opengraph/opengraph.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="512">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/prod/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/prod/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/prod/favicon-16x16.png">
+
+    <meta name="theme-color" content="#fff">
+  <style>body{counter-reset:katexEqnNo mmlEqnNo}*,*:before,*:after{box-sizing:border-box}html{font-size:16px;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{margin:0;color:var(--ui-sb-color-bg-main);font-size:1rem;line-height:1.5;font-weight:400;text-align:left}html,body{overflow:hidden;height:var(--full-height, 100vh);height:100dvh}body{position:relative;color:var(--ui-sb-color-text-main);font-family:var(--skb-font-family);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}:root{--skb-font-family:"Graphik LC TT", sans-serif;--skb-color-background:#fff;--skb-color-background-darker:#f3f3f6;--skb-color-background-darker-rgb:241, 242, 246;--skb-color-decorate:#e6e8f0;--skb-color-decorate-rgb:230, 232, 240;--skb-color-disabled:#dddfe8;--skb-color-disabled-darker:#c3c2be;--skb-color-muted:#b4b9cb;--skb-color-secondary-text:#657195;--skb-color-secondary-text-rgb:101, 113, 149;--skb-color-main-text:#000;--skb-color-success:#23af11;--skb-color-warning:#ffb13b;--skb-color-danger:#ef4949;--skb-color-dark-blue:#2e39c0;--skb-transition:.3s;--viewport-xs:0;--viewport-sm:768px;--viewport-md:1024px;--viewport-lg:1280px;--viewport-xl:1600px;--max-content-width:1368px;--full-height:calc(var(--vh, 1vh) * 100 - env(safe-area-inset-bottom));--ui-sb-border-radius-xs:4px;--ui-sb-border-radius-sm:8px;--ui-sb-border-radius-md:12px;--ui-sb-border-radius-lg:16px;--ui-sb-border-radius-xl:20px;--ui-sb-border-radius-rounded:50%}:root{--ui-sb-color-text-main:#000;--ui-sb-color-text-secondary:#666;--ui-sb-color-text-addition:#949494;--ui-sb-color-text-invert:#fff;--ui-sb-color-text-disable:#b8b8b8;--ui-sb-color-text-link:#a449ea;--ui-sb-color-text-always-white:#fff;--ui-sb-color-text-always-black:#000;--ui-sb-color-text-main-always-dark:#000;--ui-sb-color-text-main-always-light:#e3e3e3;--ui-sb-color-text-secondary-always-dark:#9d9b98;--ui-sb-color-bg-main:#fff;--ui-sb-color-bg-secondary:#f5f5f5;--ui-sb-color-bg-secondary-accent:#ebebeb;--ui-sb-color-bg-shadow:#fff;--ui-sb-color-bg-accent:#292929;--ui-sb-color-bg-invert:#000;--ui-sb-color-bg-overlay:rgba(0, 0, 0, .75);--ui-sb-color-bg-overlay-secondary:rgba(0, 0, 0, .35);--ui-sb-color-bg-overlay-additional:rgba(0, 0, 0, .04);--ui-sb-color-bg-always-white:#fff;--ui-sb-color-bg-always-black:#000;--ui-sb-color-bg-always-black-secondary:#333;--ui-sb-color-bg-secondary-always-dark:#272727;--ui-sb-color-bg-shadow-always-dark:#202020;--ui-sb-color-bg-accent-always-light:#242424;--ui-sb-color-bg-invert-always-light:#f7f7f7;--ui-sb-color-stroke-main:#e0e0e0;--ui-sb-color-stroke-secondary:#b8b8b8;--ui-sb-color-stroke-accent:#000;--ui-sb-color-stroke-invert:#3d3d3d;--ui-sb-color-stroke-disable:#e0e0e0;--ui-sb-color-stroke-always-white:#fff;--ui-sb-color-stroke-always-black:#000;--ui-sb-color-icon-main:#000;--ui-sb-color-icon-secondary:#8f8f8f;--ui-sb-color-icon-addition:#b8b8b8;--ui-sb-color-icon-invert:#fff;--ui-sb-color-icon-disable:#b8b8b8;--ui-sb-color-icon-always-white:#fff;--ui-sb-color-icon-always-black:#000;--ui-sb-color-indication-success-on-indicator-bg:#393;--ui-sb-color-indication-success:#3db83d;--ui-sb-color-indication-success-bg:#e0f5e0;--ui-sb-color-indication-success-secondary:#f0faf0;--ui-sb-color-indication-warning-on-indicator-bg:#cc7a00;--ui-sb-color-indication-warning:#f59300;--ui-sb-color-indication-warning-bg:#ffefd6;--ui-sb-color-indication-warning-secondary:#fff7eb;--ui-sb-color-indication-danger-on-indicator-bg:#b2351a;--ui-sb-color-indication-danger:#d5401f;--ui-sb-color-indication-danger-bg:#fae1db;--ui-sb-color-indication-danger-secondary:#fdf0ed;--ui-sb-color-element-danger-rgb:213, 64, 31;--ui-sb-color-element-always-white:#fff;--ui-sb-color-element-always-white-rgb:255, 255, 255;--ui-sb-color-element-always-black:#000;--ui-sb-color-element-always-black-rgb:0, 0, 0;--ui-sb-color-element-sale:#fff93d;--ui-sb-color-element-subscription:#9145fe;--ui-sb-color-element-brand-secondary:#e2dfff;--ui-sb-color-element-brand-addition:#c5bfff;--ui-sb-color-element-warning-always-dark:#fa0;--ui-sb-color-element-variable:#dcf4fe;--ui-sb-color-element-always-gray:#ccc;--ui-sb-color-element-baked-milk:#fdf4ed;--ui-sb-color-link-visited:#5d1793;--ui-sb-color-accent-coral:#ef855c;--ui-sb-color-accent-coral-secondary:#f8d6d6;--ui-sb-color-accent-coral-additional:#fdf3ef;--ui-sb-color-accent-orange:#f08d35;--ui-sb-color-accent-orange-secondary:#fae0b7;--ui-sb-color-accent-orange-additional:#fdf3e2;--ui-sb-color-accent-lime:#a3c048;--ui-sb-color-accent-lime-secondary:#e6f1c6;--ui-sb-color-accent-lime-additional:#f5fae8;--ui-sb-color-accent-emerald:#64c956;--ui-sb-color-accent-emerald-secondary:#caecc4;--ui-sb-color-accent-emerald-additional:#e9f8e7;--ui-sb-color-accent-tiffany:#54b7b3;--ui-sb-color-accent-tiffany-secondary:#bbe2e1;--ui-sb-color-accent-tiffany-additional:#eef8f7;--ui-sb-color-accent-sky:#438af9;--ui-sb-color-accent-sky-secondary:#b4d0fd;--ui-sb-color-accent-sky-additional:#e7f2fe;--ui-sb-color-accent-indigo:#7388f7;--ui-sb-color-accent-indigo-secondary:#c6cfff;--ui-sb-color-accent-indigo-additional:#ebf1ff;--ui-sb-color-accent-violent:#9761f7;--ui-sb-color-accent-violent-secondary:#d4bef9;--ui-sb-color-accent-violent-additional:#efe5fd;--ui-sb-color-accent-hot-pink:#e248b0;--ui-sb-color-accent-hot-pink-secondary:#edb6de;--ui-sb-color-accent-hot-pink-additional:#f7e2f2;--ui-sb-color-accent-brown:#ce997e;--ui-sb-color-accent-brown-secondary:#e3c5b5;--ui-sb-color-accent-brown-additional:#f1e2da;--ui-sb-color-accent-grey:#696e7d;--ui-sb-color-accent-grey-secondary:#c0c6d8;--ui-sb-color-accent-grey-additional:#f5f7fa;--ui-sb-color-action-main:#f5f5f5;--ui-sb-color-action-secondary:#ebebeb;--ui-sb-color-action-addition:#e0e0e0;--ui-sb-color-action-invert:#000;--ui-sb-color-action-accent:#000;--ui-sb-color-action-disable:#ebebeb;--ui-sb-color-action-brand-main:#000;--ui-sb-color-action-overlay-secondary:rgba(0, 0, 0, .6);--ui-sb-color-action-table:#f0f5f9;--ui-sb-color-action-always-white:#fff;--ui-sb-color-action-always-black:#000;--ui-sb-shadow-elevation-2:0 4px 8px rgba(0, 0, 0, .02), 0 0 2px rgba(0, 0, 0, .08), 0 0 1px rgba(0, 0, 0, .12);--ui-sb-shadow-elevation-4:0 4px 8px rgba(0, 0, 0, .04), 0 0 2px rgba(0, 0, 0, .08), 0 0 1px rgba(0, 0, 0, .04);--ui-sb-shadow-elevation-8:0 0 2px rgba(0, 0, 0, .08), 0 4px 16px rgba(0, 0, 0, .08);--ui-sb-shadow-elevation-10:0 4px 4px rgba(0, 0, 0, .04), 0 4px 20px rgba(0, 0, 0, .1);--ui-sb-gradient-skeleton:linear-gradient(90deg, transparent, rgba(255, 255, 255, .5), transparent)}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Semibold.81e88a4eef66dc1c.woff2) format("woff2"),url(GraphikLCTT-Semibold.b2337e9864d2c93a.woff) format("woff"),url(GraphikLCTT-Semibold.5200dbbe520dcce0.ttf) format("truetype");font-weight:600;font-display:swap}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Medium.ec13fc17a9532a29.woff2) format("woff2"),url(GraphikLCTT-Medium.09343a483a91070d.woff) format("woff"),url(GraphikLCTT-Medium.6a9b20397a8000f7.ttf) format("truetype");font-weight:500;font-display:swap}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Regular.8036687019d238e6.woff2) format("woff2"),url(GraphikLCTT-Regular.e7fc465bf2876d12.woff) format("woff"),url(GraphikLCTT-Regular.dd7e1e5f3a9ec9c8.ttf) format("truetype");font-weight:400;font-display:swap}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Bold.f0d09c7446703595.woff2) format("woff2"),url(GraphikLCTT-Bold.cff01a298e7075e7.woff) format("woff"),url(GraphikLCTT-Bold.6d8d88abe5a0369e.ttf) format("truetype");font-weight:700;font-display:swap}@charset "UTF-8";:root{--skb-player-font-family:"Graphik LC TT", sans-serif;--sbp-color-white:#fff;--sbp-color-white-rgb:255, 255, 255;--sbp-color-black:#000;--sbp-color-black-rgb:0, 0, 0;--sbp-color-black-light-rgb:23, 23, 23;--sbp-color-gray-light-rgb:64, 67, 71;--sbp-color-gray:#959595;--sbp-color-primary-light-rgb:150, 149, 226;--sbp-color-primary:#3d3bff;--sbp-color-player-overlay:rgba(0, 0, 0, .4);--sbp-color-text-secondary:#6b6b6b;--sbp-color-stroke-main:#393939;--sbp-color-bg-secondary-accent:#edecea;--sbp-color-accent-night-always-white:#f7f7f7;--sbp-color-accent-day-always-white:#fff;--sbp-transition-half-sec:.5s;--sbp-transition-one-tenth-sec:.1s;--skb-player-panel-height--sm:50px;--skb-player-panel-height--md:50px;--skb-player-panel-height--lg:54px}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Semibold.81e88a4eef66dc1c.woff2) format("woff2"),url(GraphikLCTT-Semibold.b2337e9864d2c93a.woff) format("woff"),url(GraphikLCTT-Semibold.5200dbbe520dcce0.ttf) format("truetype");font-weight:600;font-display:swap}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Medium.ec13fc17a9532a29.woff2) format("woff2"),url(GraphikLCTT-Medium.09343a483a91070d.woff) format("woff"),url(GraphikLCTT-Medium.6a9b20397a8000f7.ttf) format("truetype");font-weight:500;font-display:swap}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Regular.8036687019d238e6.woff2) format("woff2"),url(GraphikLCTT-Regular.e7fc465bf2876d12.woff) format("woff"),url(GraphikLCTT-Regular.dd7e1e5f3a9ec9c8.ttf) format("truetype");font-weight:400;font-display:swap}@font-face{font-style:normal;font-family:Graphik LC TT;src:url(GraphikLCTT-Bold.f0d09c7446703595.woff2) format("woff2"),url(GraphikLCTT-Bold.cff01a298e7075e7.woff) format("woff"),url(GraphikLCTT-Bold.6d8d88abe5a0369e.ttf) format("truetype");font-weight:700;font-display:swap}</style><link rel="stylesheet" href="styles.138c0d2ce813172c.css" crossorigin="use-credentials" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.138c0d2ce813172c.css"></noscript></head>
+  <body>
+    <script nomodule>
+      window.location.replace(`${window.origin}/unsupported.html`);
+    </script>
+
+    <app-root>
+  <script src="runtime.f029ae75c9164a0d.js" type="module" crossorigin="use-credentials"></script><script src="polyfills.f9a3d21ee7a5afce.js" type="module" crossorigin="use-credentials"></script><script src="main.d049be5514329e0b.js" type="module" crossorigin="use-credentials"></script></app-root></body>
+</html>
 

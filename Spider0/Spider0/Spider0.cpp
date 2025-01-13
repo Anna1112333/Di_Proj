@@ -5,15 +5,15 @@
 #include <iostream>
 #include <asn1err.h>
 #include "Client.h"
-#pragma execution_character_set("UTF-8")
+//#pragma execution_character_set("UTF-8")
 using namespace pqxx;
 
 int main()
 {
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-	setvbuf(stdout, nullptr, _IOFBF, 1000);
-
+	//SetConsoleCP(CP_UTF8);
+	//SetConsoleOutputCP(CP_UTF8);
+	//setvbuf(stdout, nullptr, _IOFBF, 1000);
+	setlocale(LC_ALL, "RUS");
 
 	std::ifstream read(".ini");
 	int n; //количество ступеней скачивания страниц сайта вглубь
@@ -37,7 +37,7 @@ int main()
 pqxx::connection c{ "host=127.0.0.1 port=5432 "
 			"dbname=Ds1 user=Ds1 password=anna" };
 		// Пример: загружаем главную страницу ya.ru
-		auto content = Client_get(adr, "/");
+		auto content = Client_get(adr, "/education/my");
 		std::cout << "HTTPS response:\n" << content << std::endl;
 		
 		
