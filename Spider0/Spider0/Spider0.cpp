@@ -21,7 +21,8 @@ int main()
 	std::string adr;
 	read >> adr;
 	std::cout << "Inserted depth, some addred\n"<<n<<std::endl<<adr<<std::endl;
-	
+	int port;
+	read >> port;
 	std::vector<adr_web> a;
 		a.resize(n);
 		
@@ -29,19 +30,15 @@ int main()
 	{
 		
 		a[i].ind = i;
-		std::cout << "depth " << i << std::endl;
+		std::cout <<port<< " depth " << i << std::endl;
 	}
 	try
 	{
-
 pqxx::connection c{ "host=127.0.0.1 port=5432 "
 			"dbname=Ds1 user=Ds1 password=anna" };
 		// Пример: загружаем главную страницу ya.ru
-		auto content = Client_get(adr, "/education/my");
+		auto content = Client_get(adr, "/");
 		std::cout << "HTTPS response:\n" << content << std::endl;
-		
-		
-
 	}
 	catch (std::exception& e)
 	{
