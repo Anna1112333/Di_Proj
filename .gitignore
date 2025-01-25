@@ -1,0 +1,39 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.user
+*.filters
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Каталоги
+#/Debug/
+/matchFF_1/
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+#*.lib
+
+# Executables
+#*.exe
+*.out
+*.app
+

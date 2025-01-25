@@ -124,14 +124,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VisualSC\boost\boost_1_87_0\boost_1_87_0;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\bin.v2\libs\locale\build\msvc-14.3\debug\x86_64\link-static\threading-multi;C:\Git\Di_spider\include;C:\Git\Di_spider\include\openssl;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;C:\Program Files\PostgreSQL\15\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VisualSC\boost\boost_1_87_0\boost_1_87_0;C:\Git\Di_spider\include;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Git\Di_spider\lib;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>"C:\Git\Di_spider\lib\libssl.lib";"C:\Git\Di_spider\lib\libcrypto.lib";"C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib\pqxx.lib";"C:\Program Files\PostgreSQL\15\lib\libpq.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Git\Di_spider\lib;C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\stage\lib;C:\Program Files\PostgreSQL\15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>"libssl.lib";"libcrypto.lib";"pqxx.lib";"libpq.lib";%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,7 +157,7 @@
     <ClCompile Include="Spider0.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".ini" />
+    <None Include="config.ini" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />

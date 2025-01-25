@@ -14,14 +14,27 @@ std::string Client_get(const std::string& server, const std::string& path)
     ctx.set_verify_mode(asio::ssl::verify_none);
     // Создаём SSL-сокет (tcp::socket + ssl-слой)
     asio::ssl::stream<tcp::socket> ssl_socket(io_context, ctx);
-  
-
+    
+    
     // Получаем endpoint (адрес, порт)
     tcp::resolver resolver(io_context);
     auto endpoints = resolver.resolve(server, "https"); // HTTPS-порт 443
+    asio::connect(ssl_socket.lowest_layer(), endpoints);
+    try {
+        if (!SSL_set_tlsext_host_name(ssl_socket.native_handle(), server.c_str()))
+        {
+            boost::system::error_code ec{ static_cast<int>(::ERR_get_error()), boost::asio::error::get_ssl_category() };
+            throw boost::system::system_error{ ec };
+        }
+    }
+    catch (std::exception& ec)
+    {
+        std::cout << "Error_0_0: " << ec.what() << std::endl;
+    }
+
    // tcp::resolver::query query("host.name", "https"); //+++
     // Устанавливаем соединение по TCP  
-    asio::connect(ssl_socket.lowest_layer(), endpoints.begin(), endpoints.end());
+   
     // Инициируем SSL Handshake (TLS/SSL рукопожатие)
     ssl_socket.handshake(asio::ssl::stream_base::client);
 
@@ -30,9 +43,8 @@ std::string Client_get(const std::string& server, const std::string& path)
     std::string request = 
         "GET " + path + " HTTP/1.1\r\n"
        "Host: " + server + "\r\n"
-       // "Accept: */*"
-        "Connection: close\r\n"
-        "\r\n";
+       // "Accept: */*" + "\r\n"
+        "Connection: close\r\n"+ "\r\n";
 
     // Отправляем запрос
    asio::write(ssl_socket, asio::buffer(request));
@@ -50,6 +62,7 @@ std::string Client_get(const std::string& server, const std::string& path)
         }
         if (ec == asio::error::eof)
         {
+            ssl_socket.shutdown();//+++
             // Достигнут конец потока
             break;
         }

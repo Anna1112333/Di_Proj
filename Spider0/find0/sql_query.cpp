@@ -3,8 +3,10 @@
 void tables() {}
 void SqlSelectQueryBuilder::add()
 {
+	std::string cr_tab = "CREATE TABLE IF NOT EXISTS public.web (adress text NULL); ";
+	int a = 1;
 	a++;
-	std::cout << a << std::endl;
+	std::cout<<"a equal " << a << std::endl;
 }
 
 
