@@ -15,22 +15,29 @@ int main()
 	//setvbuf(stdout, nullptr, _IOFBF, 1000);
 	setlocale(LC_ALL, "RUS");
 
-	std::ifstream read("config.ini");
-	int n; //количество ступеней скачивания страниц сайта вглубь
-	read >> n;
-	std::string adr;
-	read >> adr;
-	std::cout << "Inserted depth, some added\n"<<n<<std::endl<<adr<<std::endl;
-	int port;
-	read >> port;
+	//std::ifstream read("config.ini");
+	//int n=3; //количество ступеней скачивания страниц сайта вглубь
+	//read >> n;
+	//std::string adr ="wiki.openssl.org";
+	//read >> adr;
+	//adr = "wiki.openssl.org";
+	//std::cout << "Inserted depth, some added\n"<<n<<std::endl<<adr<<std::endl;
+	//int port;
+	//read >> port;
+	std::string name[10]{};
+	std::string value[10]{};
+	read_ini(name, value);
+	for (int i = 0; i < 10; i++)
+		std::cout << name[i] << " = " << value[i] << std::endl;
+	int n = 3;
 	std::vector<adr_web> a;
-		a.resize(n);
+		a.resize(3);
 		
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		
 		a[i].ind = i;
-		std::cout <<port<< " depth " << i << std::endl;
+		std::cout <<443<< " depth " << i << std::endl;
 	}
 	try
 	{
@@ -38,7 +45,7 @@ pqxx::connection c{ "host=127.0.0.1 port=5432 "
 			"dbname=Ds1 user=Ds1 password=anna" };
 		// Пример: загружаем главную страницу ya.ru
 
-		auto content = Client_get(adr, "/index.php/Main_Page");
+		auto content = Client_get(value[1], " ");
 		std::cout << "HTTPS response:\n" << content << std::endl;
 	}
 	catch (std::exception& e)

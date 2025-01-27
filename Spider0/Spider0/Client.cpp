@@ -89,4 +89,22 @@ std::string Client_get(const std::string& server, const std::string& path)
     return response;
 }
 
+void read_ini(std::string* name, std::string* value) {
+    std::string sighn = "*";
+    int i = 0;
+    std::ifstream read("config.ini");
+    while (i > -3 && i < 20 && !read.eof()) {
+        read >> name[i];
 
+        read >> sighn;
+        if (sighn == "=") {
+            std::string  val;
+            read >> val;
+            value[i] = val;
+        }
+        else  std::cout << "error " << i << "value";
+        i++;
+    }
+    // for (int i = 0; i < 10; i++)
+     //    std::cout << name[i] << " = " << value[i] << std::endl;
+}
