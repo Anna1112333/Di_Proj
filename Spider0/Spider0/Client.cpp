@@ -1,8 +1,13 @@
-//#include <boost/asio/ssl/host_name_verification.hpp>
-//#include <boost/asio/ssl.hpp>
 #include "Client.h"
+
+
 namespace asio = boost::asio;
 using tcp = asio::ip::tcp;
+namespace beast = boost::beast;     // from <boost/beast.hpp>
+namespace http = beast::http;       // from <boost/beast/http.hpp>
+
+
+
 std::string Client_get(const std::string& server, const std::string& path)
 {
     // Контекст SSL. В данном примере включено лишь базовое доверие к корневым сертификатам.
@@ -93,18 +98,13 @@ void read_ini(std::string* name, std::string* value) {
     std::string sighn = "*";
     int i = 0;
     std::ifstream read("config.ini");
-    while (i > -3 && i < 20 && !read.eof()) {
-        read >> name[i];
-
+    while (!read.eof()) {
+        read >> name[i];     
         read >> sighn;
-        if (sighn == "=") {
-            std::string  val;
-            read >> val;
-            value[i] = val;
+        if (sighn == "=") {           
+            read >> value[i];          
         }
-        else  std::cout << "error " << i << "value";
-        i++;
-    }
-    // for (int i = 0; i < 10; i++)
-     //    std::cout << name[i] << " = " << value[i] << std::endl;
+        else { std::cout << "error " << i << "value"; }
+        i++;     
+    }  
 }

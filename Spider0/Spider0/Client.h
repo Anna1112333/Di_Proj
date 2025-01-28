@@ -1,7 +1,9 @@
 #pragma once
+#include <boost/asio/ssl/host_name_verification.hpp>//+++
+#include <boost/asio/ssl.hpp>//+++
+#include <boost/locale.hpp>
 #include <boost/asio.hpp>   //+++
 #include <boost/asio/ssl.hpp>//+++
-#include <fstream>
 #include <openssl/ssl.h> //+++
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
@@ -12,20 +14,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <fstream>
 #include <pqxx/pqxx>
 #include <windows.h>
 
-namespace asio = boost::asio;
-using tcp = asio::ip::tcp;
 
-
-namespace beast = boost::beast;     // from <boost/beast.hpp>
-namespace http = beast::http;       // from <boost/beast/http.hpp>
-//namespace net = boost::asio;        // from <boost/asio.hpp>
-//using tcp = net::ip::tcp;           // from <boost/asio/ip/tcp.hpp>
 void read_ini(std::string* name, std::string* value);
-
+std::string Client_get(const std::string& server, const std::string& path);
 
 
 struct adr_web {
@@ -34,4 +29,3 @@ struct adr_web {
     
 };
 
-std::string Client_get(const std::string& server, const std::string& path);
