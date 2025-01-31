@@ -29,7 +29,9 @@ int main()
 	{
 pqxx::connection c{ "host=127.0.0.1 port=5432 "
 			"dbname=Ds1 user=Ds1 password=anna" };
-		auto content = Client_get(value[1], " ");  // Пример: загружаем главную страницу 
+std::cout << "value1 is " << value[1]<<" " << "value3 is " << value[3] << std::endl;
+
+		auto content = Client_get(value[1], value[3]);  // Пример: загружаем главную страницу 
 		std::cout << "HTTPS response:\n" << content << std::endl;
 	}
 	catch (std::exception& e)

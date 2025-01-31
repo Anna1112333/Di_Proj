@@ -1,22 +1,25 @@
 #include "Client.h"
+#include <boost/asio/query.hpp>
 
 
 namespace asio = boost::asio;
-using tcp = asio::ip::tcp;
+using tcp = boost::asio::ip::tcp;
 namespace beast = boost::beast;     // from <boost/beast.hpp>
 namespace http = beast::http;       // from <boost/beast/http.hpp>
-
+namespace websocket = beast::websocket; // from <boost/beast/websocket.hpp> +++
+namespace ssl = boost::asio::ssl;       // from <boost/asio/ssl.hpp> +++
 
 
 std::string Client_get(const std::string& server, const std::string& path)
 {
     // Контекст SSL. В данном примере включено лишь базовое доверие к корневым сертификатам.
     // Можно донастроить контекст (например, указать путь к сертификатам, отключить/включить разные версии TLS и т.д.)
-    asio::ssl::context ctx(asio::ssl::context::sslv23_client);
+    ssl::context ctx(ssl::context::sslv23_client);
     asio::io_context io_context; 
-
+    // Клиенту и серверу нужно позвонить
+    //SSL_CTX_new(); // Подать заявку на среду сеанса SSL  +++
     ctx.set_default_verify_paths();
-    ctx.set_verify_mode(asio::ssl::verify_none);
+    ctx.set_verify_mode(ssl::verify_none);
     // Создаём SSL-сокет (tcp::socket + ssl-слой)
     asio::ssl::stream<tcp::socket> ssl_socket(io_context, ctx);
     
@@ -28,7 +31,7 @@ std::string Client_get(const std::string& server, const std::string& path)
     try {
         if (!SSL_set_tlsext_host_name(ssl_socket.native_handle(), server.c_str()))
         {
-            boost::system::error_code ec{ static_cast<int>(::ERR_get_error()), boost::asio::error::get_ssl_category() };
+            boost::system::error_code ec{ static_cast<int>(::ERR_get_error()), asio::error::get_ssl_category() };
             throw boost::system::system_error{ ec };
         }
     }
@@ -36,12 +39,12 @@ std::string Client_get(const std::string& server, const std::string& path)
     {
         std::cout << "Error_0_0: " << ec.what() << std::endl;
     }
-
-   // tcp::resolver::query query("host.name", "https"); //+++
+    //ip::tcp::resolver::query query("www.boost.org", "http");
+   //ip::tcp::resolver::query query("host.name", "https"); //+++
     // Устанавливаем соединение по TCP  
    
     // Инициируем SSL Handshake (TLS/SSL рукопожатие)
-    ssl_socket.handshake(asio::ssl::stream_base::client);
+    ssl_socket.handshake(ssl::stream_base::client);
 
     // Формируем простой HTTP GET-запрос:
     // Если нужен HTTP/1.1, важен заголовок "Host:"
