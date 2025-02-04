@@ -4,7 +4,7 @@
 using namespace pqxx;
 
 int main()
-{
+{/*
 	//SetConsoleCP(CP_UTF8);
 	//SetConsoleOutputCP(CP_UTF8);
 	//setvbuf(stdout, nullptr, _IOFBF, 1000);
@@ -38,5 +38,5 @@ std::cout << "value1 is " << value[1]<<" " << "value3 is " << value[3] << std::e
 	{
 		std::cout << "Error_0: " << e.what() << std::endl;
 	}
-	return 0;
+	return 0;*/
 }

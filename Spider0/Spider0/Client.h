@@ -9,7 +9,6 @@
 #include <openssl/ssl.h> //+++
 #include <boost/beast/core.hpp> //ok
 #include <boost/beast/http.hpp>
-//#include <boost/beast/version.hpp>
 #include <boost/asio/connect.hpp> //ok
 #include <boost/asio/ip/tcp.hpp> //ok
 #include <cstdlib> //ok

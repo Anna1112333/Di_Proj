@@ -122,14 +122,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0;C:\Git\Di_spider\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>"pqxx.lib";"C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\include\pqxx\pqxx";"C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib\pqxx.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\VisualSC\libpqxx\libpqxx-7.10.0\build\install\lib;C:\Git\Di_spider\lib;C:\VisualSC\boost\boost_1_87_0\boost_1_87_0\stage\lib;C:\Program Files\PostgreSQL\15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>"pqxx.lib";"libpq.lib";"libssl.lib";"libcrypto.lib";%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sql_query.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text_web.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
