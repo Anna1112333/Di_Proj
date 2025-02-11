@@ -21,7 +21,7 @@
 
 
 void read_ini(std::string* name, std::string* value);
-std::string Client_get(const std::string& server, const std::string& path);
+std::string Client_get( std::string& server, const std::string& path);
 
 
 struct adr_web {

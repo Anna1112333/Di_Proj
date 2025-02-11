@@ -4,7 +4,7 @@
 using namespace pqxx;
 
 int main()
-{/*
+{
 	//SetConsoleCP(CP_UTF8);
 	//SetConsoleOutputCP(CP_UTF8);
 	//setvbuf(stdout, nullptr, _IOFBF, 1000);
@@ -14,7 +14,7 @@ int main()
 	std::string value[10]{};
 	read_ini(name, value);
 	for (int i = 0; i < 10; i++)
-   std::cout << name[i] << " = " << value[i] << std::endl;
+   std::cout<<"************" << name[i] << " = " << value[i] << std::endl;
 	
 	int n = 3;
 	std::vector<adr_web> a;
@@ -23,14 +23,20 @@ int main()
 	for (int i = 0; i < 3; i++)
 	{		
 		a[i].ind = i;
-		std::cout <<443<< " depth " << i << std::endl;
+	//	std::cout <<443<< " depth " << i << std::endl;
 	}
 	try
 	{
 pqxx::connection c{ "host=127.0.0.1 port=5432 "
 			"dbname=Ds1 user=Ds1 password=anna" };
-std::cout << "value1 is " << value[1]<<" " << "value3 is " << value[3] << std::endl;
+work w(c);
+w.exec("CREATE TABLE IF NOT EXISTS public.web (adress text NULL); ");
+w.exec("CREATE TABLE IF NOT EXISTS public.words (word text NULL); ");
+w.commit();
+//std::cout << "value 1 is " << value[1]<<" " << "value 3 is " << value[3] << std::endl;
 
+	std::cout << "************" << std::endl;
+std::cout << value[0] << "   " << value[1] << "   " << value[2] << "   " << value[3] << std::endl;
 		auto content = Client_get(value[1], value[3]);  // Пример: загружаем главную страницу 
 		std::cout << "HTTPS response:\n" << content << std::endl;
 	}
@@ -38,5 +44,5 @@ std::cout << "value1 is " << value[1]<<" " << "value3 is " << value[3] << std::e
 	{
 		std::cout << "Error_0: " << e.what() << std::endl;
 	}
-	return 0;*/
+	return 0;
 }

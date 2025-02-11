@@ -10,14 +10,18 @@ namespace websocket = beast::websocket; // from <boost/beast/websocket.hpp> +++
 namespace ssl = boost::asio::ssl;       // from <boost/asio/ssl.hpp> +++
 
 
-std::string Client_get(const std::string& server, const std::string& path)
+std::string Client_get( std::string& server, const std::string& path)
 {
+    std::cout << "server is " << server << "path is " << path << std::endl;
     // Контекст SSL. В данном примере включено лишь базовое доверие к корневым сертификатам.
     // Можно донастроить контекст (например, указать путь к сертификатам, отключить/включить разные версии TLS и т.д.)
     ssl::context ctx(ssl::context::sslv23_client);
     asio::io_context io_context; 
     // Клиенту и серверу нужно позвонить
-    //SSL_CTX_new(); // Подать заявку на среду сеанса SSL  +++
+    SSL_CTX* an=SSL_CTX_new(TLS_method()); // Подать заявку на среду сеанса SSL  параметр const SSL_METHOD *method +++
+    std::cout<<"        ------*******-------      " << an;
+    
+
     ctx.set_default_verify_paths();
     ctx.set_verify_mode(ssl::verify_none);
     // Создаём SSL-сокет (tcp::socket + ssl-слой)
@@ -27,11 +31,17 @@ std::string Client_get(const std::string& server, const std::string& path)
     // Получаем endpoint (адрес, порт)
     tcp::resolver resolver(io_context);
     auto endpoints = resolver.resolve(server, "https"); // HTTPS-порт 443
-    asio::connect(ssl_socket.lowest_layer(), endpoints);
+    auto ep=asio::connect(ssl_socket.lowest_layer(), endpoints);
+   
+    std::cout << "server is " << server<<std::endl;
+
     try {
+        
+       
+
         if (!SSL_set_tlsext_host_name(ssl_socket.native_handle(), server.c_str()))
         {
-            boost::system::error_code ec{ static_cast<int>(::ERR_get_error()), asio::error::get_ssl_category() };
+            boost::system::error_code ec{ static_cast<int>(ERR_get_error()), asio::error::get_ssl_category() };
             throw boost::system::system_error{ ec };
         }
     }
@@ -39,8 +49,7 @@ std::string Client_get(const std::string& server, const std::string& path)
     {
         std::cout << "Error_0_0: " << ec.what() << std::endl;
     }
-    //ip::tcp::resolver::query query("www.boost.org", "http");
-   //ip::tcp::resolver::query query("host.name", "https"); //+++
+    
     // Устанавливаем соединение по TCP  
    
     // Инициируем SSL Handshake (TLS/SSL рукопожатие)
@@ -51,7 +60,8 @@ std::string Client_get(const std::string& server, const std::string& path)
     std::string request = 
         "GET " + path + " HTTP/1.1\r\n"
        "Host: " + server + "\r\n"
-       // "Accept: */*" + "\r\n"
+        "Accept: text/html" + "\r\n"
+        //"Accept-Language: ru" + "\r\n"        
         "Connection: close\r\n"+ "\r\n";
 
     // Отправляем запрос
@@ -85,6 +95,7 @@ std::string Client_get(const std::string& server, const std::string& path)
         // Write data to the end of the file
         infile << "This data will be appended.-------------------" << std::endl;
         infile << response << std::endl;
+        infile << "This data appended.*********************" << std::endl;
         std::cout << "++++++++++++++++++++++++++++" << std::endl;
         // Close the file when done
         infile.close();
